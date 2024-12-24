@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hệ thống tính thuế thu nhập cá nhân</h1>
+    <form>
+        <label for="tongthunhap">Tổng thu nhập:  </label>
+        <input type="text" id="tongthunhap" name="tongthunhap">
+        <br>
+        <label for="songuoiphuthuoc">Số người phụ thuộc: </label>
+        <input type="text" name="songuoiphuthuoc" id="songuoiphuthuoc">
+        <br>
+        <input type="button" value="tinh thue" onclick="thue()" >
+    </form>
+    <div id="thue">Thuế TNCN phải nộp:</div>
+<script>
+    function thue() {
+        let tongthunhap = parseInt(document.getElementById('tongthunhap').value);
+        let songuoiphuthuoc = parseInt(document.getElementById('songuoiphuthuoc').value);
+        let thue;
+        console.log(tongthunhap);
+        console.log(songuoiphuthuoc);
+        thuesuat = tongthunhap - (11000000 + (songuoiphuthuoc * 4400000));
+        if (thuesuat === 5000000)
+        {
+            thue = 5000000 * 5 / 100;
+        }
+        if (thuesuat > 5000000 && thuesuat <= 10000000){
+        thue = ((thuesuat - 5000000) * 10 / 100) + (5000000 * 5 / 100);
+    }
+        if (thuesuat > 1000000 && thuesuat <= 18000000) {
+        thue = ((thuesuat - 10000000) * 15 / 100)+((5000000) * 10 / 100) + (5000000 * 5 / 100);
+    }
+        if (thuesuat > 18000000 && thuesuat <= 32000000){
+        thue = ((thuesuat - 18000000) * 20 / 100) + ((8000000) * 15 / 100)+ ((5000000) * 10 / 100) + (5000000 * 5 / 100);
+    }
+        if (thuesuat > 32000000 && thuesuat <= 52000000){
+        thue = ((thuesuat - 32000000) * 25 / 100) + ((14000000) * 20 / 100)+ ((3000000) * 15 / 100)+ ((5000000) * 10 / 100) + (5000000 * 5 / 100);
+    }
+        if (thuesuat > 52000000 && thuesuat <= 80000000){
+        thue = ((thuesuat - 52000000) * 30 / 100) + ((32000000) * 25 / 100) + ((14000000) * 20 / 100) + ((3000000) * 15 / 100)+ ((5000000) * 10 / 100) + (5000000 * 5 / 100);
+    }
+        if (thuesuat > 80000000){
+            thue = ((thuesuat-80000000)* 35 / 100)+((28000000)* 30 / 100)+((32000000)* 25 / 100)+((14000000)*20/100) +((3000000)*15/100)+ (( 5000000)*10 / 100) + (5000000 * 5 / 100);
+
+        }
+        document.getElementById('thue').innerHTML = 'Thuế TNCN phải nộp:' + thue +'VND';
+    }
+</script>
+</body>
+</html>

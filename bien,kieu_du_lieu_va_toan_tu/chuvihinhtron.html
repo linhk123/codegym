@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label for="r">r =</label>
+    <input id="r" type="text" name ='r'>
+    <input type="button" value="chuvi" onclick="chuvi()">
+    <div id="area">chuvi = </div>
+</form>
+<script>
+    function chuvi() {
+        let r = parseInt(document.getElementById("r").value);
+        console.log(r);
+        document.getElementById("area").innerHTML = 'chuvi = ' + Math.PI * 2 * r;
+    }
+    </script>
+</body>
+</html>

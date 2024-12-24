@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form>
+   <label for="r">r =</label>
+   <input id="r" type="text" name ='r'>
+   <input type="button" value="dien tich" onclick="dien()">
+   <div id="area">Dien tich = </div>
+ </form>
+<script>
+  function dien() {
+    let r = parseInt(document.getElementById("r").value);
+    console.log(r);
+    document.getElementById("area").innerHTML = 'Dien tich = ' + Math.PI * r * r;
+  }
+</script>
+</body>
+</html>
