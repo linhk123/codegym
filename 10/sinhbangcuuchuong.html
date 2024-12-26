@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="bang" border="1"></table>
+</body>
+
+<script>
+
+        function sinhbang() {
+        let table = document.getElementById('bang');
+        for (let i = 1; i < 10; i++) {
+        let row = document.createElement('tr'); // Tạo hàng mới
+        for (let j = 1; j <= 10; j++) {
+        let td = document.createElement('td'); // Tạo ô mới
+        td.textContent = i + ' x ' + j + ' = ' + (i * j); // Nội dung ô
+        row.appendChild(td); // Thêm ô vào hàng
+    }
+        table.appendChild(row); // Thêm hàng vào bảng
+    }
+    }
+
+        // Gọi hàm để sinh bảng cửu chương
+        sinhbang();
+</script>
+</html>
