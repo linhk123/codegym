@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<label for="so">Số lượng số nguyên tố:</label>
+<input type="text" name="so" id="so">
+<input type="button" value="Tìm kiếm" onclick="number()">
+<div id="result">Các số nguyên tố:</div>
+
+<script>
+    function number() {
+        let x = parseInt(document.getElementById("so").value); // Lấy số lượng số nguyên tố cần tìm
+        let count = 0; // Số lượng số nguyên tố đã tìm thấy
+        let r = ""; // Chuỗi kết quả
+        let num = 2; // Bắt đầu kiểm tra từ số 2
+
+        // Hàm kiểm tra số nguyên tố
+        function songuyen(n) {
+            if (n < 2) return false; // Số nhỏ hơn 2 không phải số nguyên tố
+            for (let i = 2; i <= Math.sqrt(n); i++) { // Kiểm tra đến căn bậc hai của n
+                if (n % i === 0) return false; // Nếu chia hết cho i, không phải số nguyên tố
+            }
+            return true; // Nếu không chia hết cho bất kỳ số nào, là số nguyên tố
+        }
+
+        // Lặp cho đến khi tìm đủ x số nguyên tố
+        while (count < x) {
+            if (songuyen(num)) { // Kiểm tra nếu num là số nguyên tố
+                r += num + " "; // Thêm số nguyên tố vào chuỗi kết quả
+                count++; // Tăng số lượng số nguyên tố đã tìm
+            }
+            num++; // Tăng số kiểm tra tiếp theo
+        }
+
+        document.getElementById("result").innerHTML = "Các số nguyên tố: " + r; // Hiển thị kết quả
+    }
+</script>
+</body>
+</html>
