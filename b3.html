@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>[Thực hành] Tìm giá trị trong mảng</title>
+    <title>Title</title>
 </head>
 <body>
-<p>cac phan tu gom: [43,23,11,67,33,75]</p>
-<label for="so">nhap so can tim </label>
-<input type="text" name="so" id="so">
-<input type="button" value="tim kiem" onclick="timKiem()">
-<div id="result"></div>
-</body>
 <script>
-    const arr = [43, 23, 11, 67, 33, 75];
-    console.log(arr);
-
-    function timKiem() {
-        debugger;
-        let so = document.getElementById("so").value;
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] == so) {
-                document.getElementById("result").innerHTML = "so" + so + "ở vi tri " + i;
-            }
-        }
-        document.getElementById("result").innerHTML = "không tìm thấy phần tử.";
+  let n = window.prompt("");
+  console.log(n.toString());
+  let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+  let result = [];
+  for (let i = 0; i < n.length; i++) {
+    if (UPPER.indexOf(n[i]) !== -1){
+      result.push(n[i].toLowerCase());
     }
+    else if (LOWER.indexOf(n[i]) !== -1){
+      result.push(n[i].toUpperCase());
+    }
+    else {
+      result.push(n[i]);
+    }
+  }
+  console.log(result.join(''));
 </script>
+</body>
 </html>
