@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <label for="chu">Nhập từ:</label>
+  <input type="text" id="chu">
+  <input type="button" value="Dịch" onclick="dich()"><br>
+    <p>(apple, banana, orange, dog, cat, brid)</p>
+    <div id ='ketqua'></div>
+</form>
+<script>
+  function dich(){
+     let arr = new Array(
+         ['apple', 'banana', 'Orange'],
+         ['dog','cat','bird'],
+     );
+     let ketqua='';
+     if ('apple'){
+         ketqua = 'táo';
+     }else if('banana'){
+         ketqua = 'chuối';
+     }else if('orange'){
+         ketqua = 'cam';
+     }else if('dog'){
+         ketqua = 'chó';
+     }else if('cat'){
+         ketqua = 'mèo';
+     }else if('bird'){
+         ketqua = 'chim';
+     }else{
+         ketqua = 'không tìm thấy'
+     }
+     document.getElementById('ketqua').innerHTML = ketqua;
+  }
+</script>
+</body>
+</html>
