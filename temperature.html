@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Temperature (do_C) {
+        this.do_C = do_C;
+        this.getdo_F = function () {
+            return this.do_C * 1.8 + 32;
+
+        }
+        this.getdo_K = function () {
+            return this.do_C + 273.15;
+        }
+
+    }
+
+    let temp =new Temperature(25);
+    document.write('Nhiệt độ F:' + temp.getdo_F().toFixed(2) + '<br>');
+    document.write('Nhiệt độ K:' + temp.getdo_K().toFixed(2));
+</script>
+</body>
+</html>
