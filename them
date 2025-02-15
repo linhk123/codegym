@@ -1,0 +1,28 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class them {
+    public static void main(String[] args) {
+        int arr[] = {6, 2, 1, 56, 12, 57, 234, 78};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap vao dia chi muon chen vao: ");
+        int x = Integer.parseInt(sc.nextLine());
+        System.out.println("nhap vao gia tri chen vao: ");
+        int y = Integer.parseInt(sc.nextLine());
+        arr = them(arr, x, y);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static int[] them(int arr[], int x, int y) {
+        int[] arr_1 = new int[arr.length +1];
+        for (int i = 0; i < x; i++) {
+            arr_1[i]= arr[i];
+        }
+        arr_1[x]=y;
+        for (int i = x+1; i < arr_1.length; i++) {
+            arr_1[i]=arr[i - 1];
+        }
+        arr=arr_1;
+        return arr;
+    }
+}
