@@ -1,0 +1,47 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class gopmang {
+    public static void main(String[] args) {
+        int size_1,size_2;
+        int[] arr_1, arr_2 ,arr;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of array 1");
+        size_1 = sc.nextInt();
+        System.out.println("Enter the size of array 2");
+        size_2 = sc.nextInt();
+        arr_1 = new int[size_1];
+        arr_2 = new int[size_2];
+        // nhap vao
+        for (int i=0;i<size_1;i++){
+            System.out.print("Enter the element 1: "+(i+1)+":");
+            arr_1[i]=sc.nextInt();
+        }
+        for (int i=0;i<size_2;i++){
+            System.out.print("Enter the element 2: "+(i+1)+":");
+            arr_2[i]=sc.nextInt();
+        }
+        //in ra
+        System.out.print("arr_1:  ");
+        for (int i=0;i<size_1;i++){
+            System.out.print(arr_1[i]+", ");
+        }
+        System.out.println(" ");
+        System.out.print("arr_2:  ");
+        for (int i=0;i<size_2;i++){
+            System.out.print(arr_2[i]+", ");
+        }
+        arr = gop(arr_1,arr_2);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static int[] gop (int[] arr_1,int[] arr_2 ){
+        int[] arr_3 = new int[arr_1.length + arr_2.length];
+        for (int i=0;i<arr_1.length;i++){
+            arr_3[i]=arr_1[i];
+        }
+        for (int i= 0;i<arr_2.length;i++){
+            arr_3[i+arr_1.length]=arr_2[i];
+        }
+        return arr_3;
+    }
+}
